@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import Admin from './container/Admin';
 import Home from './container/Home';
 import Cart from './container/Cart';
+import Report from './container/Report';
 
 ReactDOM.render(
   <Router>
@@ -14,6 +15,7 @@ ReactDOM.render(
       <Route exact path='/' component={App} />
       <Route path='/admin' component={Admin} />
       <Route path='/cart' component={Cart} />
+      <Route path='/report' component={Report} />
     </div>
   </Router>,
   document.getElementById('root')
