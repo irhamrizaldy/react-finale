@@ -48,12 +48,14 @@ class Home extends Component {
 
         return (
             <div className="container">
-                <Input label="Search Product" onChange={this.onChange} />
+                <div class="md-form form-group w-50 mx-auto">
+                    <Input hint="Search Product" onChange={this.onChange} />
+                </div>
                 <div className="box">
                     <div className="row">
                         {
                             this.state.listProduct.map(product => {
-                                if (search !== "" && product.title.indexOf(search) === -1) {
+                                if (search !== "" && product.title.toLowerCase().indexOf(search.toLowerCase()) === -1) {
                                     return null;
                                 }
                                 return <Product key={product.uid} title={product.title} description={product.description} price={product.price} idProduct={product.uid} selectItem={this.getSelectedItem} />
