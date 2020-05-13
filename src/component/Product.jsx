@@ -3,7 +3,7 @@ import img from '../container/item1.jpg';
 
 const Product = (props) => {
     return (
-        <div className="card" style={{ width: '18rem' }}>
+        <div className="card mx-auto" style={{ width: '18rem' }}>
             <img className="card-img-top" src={img} />
             <div className="card-body">
                 <h5 className="card-title" style={{ fontFamily: 'arial' }} >{props.title}</h5>

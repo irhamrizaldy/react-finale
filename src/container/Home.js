@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Product from '../component/Product';
 import firebase from 'firebase';
 import firebaseConfig from '../firebase/config';
+import { Input } from 'mdbreact';
 
 class Home extends Component {
     constructor(props) {
@@ -10,7 +11,8 @@ class Home extends Component {
             firebase.initializeApp(firebaseConfig);
         }
         this.state = {
-            listProduct: []
+            listProduct: [],
+            search: ''
         }
     }
 
@@ -20,6 +22,10 @@ class Home extends Component {
             const state = snapshot.val();
             this.setState(state);
         });
+    }
+
+    onChange = e => {
+        this.setState({ search: e.target.value })
     }
 
     getSelectedItem = (idProduct) => {
@@ -37,12 +43,19 @@ class Home extends Component {
     }
 
     render() {
+        const { search } = this.state;
+
+
         return (
             <div className="container">
+                <Input label="Search Product" onChange={this.onChange} />
                 <div className="box">
                     <div className="row">
                         {
                             this.state.listProduct.map(product => {
+                                if (search !== "" && product.title.indexOf(search) === -1) {
+                                    return null;
+                                }
                                 return <Product key={product.uid} title={product.title} description={product.description} price={product.price} idProduct={product.uid} selectItem={this.getSelectedItem} />
                             })
                         }
