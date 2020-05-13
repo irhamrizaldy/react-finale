@@ -7,7 +7,9 @@ import Log from '../component/Log';
 class Cart extends Component {
     constructor(props) {
         super(props);
-        firebase.initializeApp(firebaseConfig);
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
         this.state = {
             listProduct: []
         }
@@ -29,6 +31,7 @@ class Cart extends Component {
         return (
             <div>
                 <Navbar />
+                <br />
                 <div className="container">
                     <div className="box">
                         <div className="row">

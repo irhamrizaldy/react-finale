@@ -3,8 +3,10 @@ import img from '../container/item1.jpg';
 
 const Log = (props) => {
     return (
-        <div class="App">
-            <p>Pesanan produk {props.title} seharga {props.price} masih dalam proses.</p>
+        <div class="container">
+            <ul class="list-group">
+                <li class="list-group-item">Pesanan sepatu {props.title} seharga {props.price} masih dalam proses.</li>
+            </ul>
         </div>
     )
 }
