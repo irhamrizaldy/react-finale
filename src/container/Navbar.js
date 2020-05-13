@@ -5,7 +5,9 @@ const Navbar = () => {
     return (
         <nav className="nav-wrapper indigo accent-4">
             <div className="container">
-                <Link to="/" className="brand-logo">Shoesee</Link>
+                <ul className="left">
+                    <Link to="/" className="brand-logo">Shoesee</Link>
+                </ul>
                 <ul className="right">
                     <li><Link to="/cart">Cart</Link></li>
                     <li><Link to="/report">Report</Link></li>
