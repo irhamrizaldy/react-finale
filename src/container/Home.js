@@ -45,7 +45,6 @@ class Home extends Component {
     render() {
         const { search } = this.state;
 
-
         return (
             <div className="container">
                 <div class="md-form form-group w-50 mx-auto">
