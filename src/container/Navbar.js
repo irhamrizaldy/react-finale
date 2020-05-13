@@ -7,7 +7,7 @@ const Navbar = () => {
             <div className="container">
                 <Link to="/" className="brand-logo">Shoesee</Link>
                 <ul className="right">
-                    <li><Link to="/">Shop</Link></li>
+                    <li><Link to="/cart">Cart</Link></li>
                     <li><Link to="/report">Report</Link></li>
                 </ul>
             </div>

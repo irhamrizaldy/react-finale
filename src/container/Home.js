@@ -27,12 +27,24 @@ class Home extends Component {
             return data.uid == idProduct;
         });
         this.setState({ listProduct: newState });
-        firebase.database().ref("/Cart History").set(newState);
+        firebase.database().ref("/cartLog").set(newState);
         console.log(newState);
     }
 
     componentDidMount() {
         this.getDataFromServerAPI();
+    }
+
+    saveDataServerAPI = () => {
+        firebase.database()
+            .ref("/cartLog")
+            .set(this.state);
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState !== this.state) {
+            this.saveDataServerAPI();
+        }
     }
 
     render() {
