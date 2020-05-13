@@ -9,12 +9,6 @@ const Dashboard = (props) => {
                 <div class="panel-body">
                     <table class="table table-stripe">
                         <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Description</th>
-                                <th>Price</th>
-                                <th>Action</th>
-                            </tr>
                         </thead>
                         <tbody>
                             <tr>
